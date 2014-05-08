@@ -273,9 +273,10 @@ THRILLER FLOAT(126),
 CIENCIAFICCION FLOAT(126)
 );
 
-drop table PelisHist
-(ID    VARCHAR2(3) not null, 
- TITULO   VARCHAR2(58),
+drop table PelisHist cascade constraints;
+create table PelisHist
+(ID VARCHAR2(3) not null, 
+TITULO   VARCHAR2(58),
 GENERO VARCHAR2(17), 
 DESCRIPCION VARCHAR2(3643),
 ACCION FLOAT(126),
@@ -290,6 +291,6 @@ TERROR FLOAT(126),
 THRILLER FLOAT(126),
 CIENCIAFICCION FLOAT(126),
 PRIMARY KEY (ID)
-)
+);
 
 create index INDEXDESCRIPPELISHIST on PelisAhora(DESCRIPCION) tablespace users;
